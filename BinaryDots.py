@@ -6,43 +6,47 @@ import tkinter as tk
 def easy_frame():
 	board = Canvas(root)
 	board.config(width=500,height=500)
-	board.create_rectangle(0, 0, 125, 125, outline = 'BLACK')
-	board.create_rectangle(125, 0, 250, 125, outline = 'BLACK')
-	board.create_rectangle(250, 0, 375, 125, outline = 'BLACK')
-	board.create_rectangle(375, 0, 505, 125, outline = 'BLACK')
 
-	board.create_rectangle(0,125,125,250, outline = 'BLACK')
-	board.create_rectangle(125, 125, 250, 250, outline = 'BLACK')
-	board.create_rectangle(250, 125, 375, 250, outline = 'BLACK')
-	board.create_rectangle(375,125,505,250, outline = 'BLACK')
+	for ycoordinate in range(0,500,125):
+		for xcoordinate in range(0,500,125):
+			board.create_rectangle(xcoordinate,ycoordinate,xcoordinate+125,ycoordinate+125,outline='BLACK')
 
-	board.create_rectangle(0, 250, 125, 375, outline = 'BLACK')
-	board.create_rectangle(125, 250, 250, 375, outline = 'BLACK')
-	board.create_rectangle(250, 250, 375, 375, outline = 'BLACK')
-	board.create_rectangle(375, 250, 505, 375, outline = 'BLACK')
-
-	board.create_rectangle(0,375, 125,500, outline = 'BLACK')
-	board.create_rectangle(125,375, 250,505, outline = 'BLACK')
-	board.create_rectangle(250,375, 375,505, outline = 'BLACK')
-	board.create_rectangle(375,375, 505,505, outline = 'BLACK')
 
 	board.pack()
 	button1.destroy()
 	button2.destroy()
 	button3.destroy()
 	frame.destroy()
-'''
-	
-
-	'''
 
 def medium_frame():
 	board = Canvas(root)
+	board.config(width=500,height=500)
+
+	for ycoordinate in range(0,500,83):
+		for xcoordinate in range(0,500,83):
+			board.create_rectangle(xcoordinate,ycoordinate,xcoordinate+83,ycoordinate+83,outline='BLACK')
+
 	board.pack()
+	button1.destroy()
+	button2.destroy()
+	button3.destroy()
+	frame.destroy()
 
 def hard_frame():
 	board = Canvas(root)
+	board.config(width=500,height=500)
+
+	for ycoordinate in range(0,500,62):
+		for xcoordinate in range(0,500,62):
+			board.create_rectangle(xcoordinate,ycoordinate,xcoordinate+62,ycoordinate+62,outline='BLACK')
+
 	board.pack()
+	button1.destroy()
+	button2.destroy()
+	button3.destroy()
+	frame.destroy()
+
+
 
 def raise_frame():
 	start_button.destroy()
