@@ -2,7 +2,12 @@ from tkinter import *
 from tkinter.ttk import *
 from time import strftime 
 import tkinter as tk
+import frames
 
+def clicked():
+	print('You clicked!')
+
+#this is the easy level, a 4x4 grid
 def easy_frame():
 	board = Canvas(root)
 	board.config(width=500,height=500)
@@ -10,14 +15,17 @@ def easy_frame():
 	for ycoordinate in range(0,500,125):
 		for xcoordinate in range(0,500,125):
 			board.create_rectangle(xcoordinate,ycoordinate,xcoordinate+125,ycoordinate+125,outline='BLACK')
-
+			board_button = Button(board,command=clicked)
+			button1_window = board.create_window(70,50,anchor=N, window=board_button)
 
 	board.pack()
 	button1.destroy()
 	button2.destroy()
 	button3.destroy()
 	frame.destroy()
+	frames.easy()
 
+#this is the medium level, a 6x6 grid
 def medium_frame():
 	board = Canvas(root)
 	board.config(width=500,height=500)
@@ -31,7 +39,9 @@ def medium_frame():
 	button2.destroy()
 	button3.destroy()
 	frame.destroy()
+	frames.medium()
 
+#this is the hard level, am 8x8 grid
 def hard_frame():
 	board = Canvas(root)
 	board.config(width=500,height=500)
@@ -45,9 +55,10 @@ def hard_frame():
 	button2.destroy()
 	button3.destroy()
 	frame.destroy()
+	frames.hard()
 
 
-
+#second screen with level buttons. when a level is clicked it will go to its appropriate grid
 def raise_frame():
 	start_button.destroy()
 	global frame
@@ -62,7 +73,7 @@ def raise_frame():
 	button3.pack()
 
 
-#simple window example 
+#start of program. opening screen. 
 root = Tk()
 root.minsize(500,500) #minsize sets the size of the window 
 root.config(bg = "#a4f6f9") #this sets a different color to the background
